@@ -1,16 +1,16 @@
 import React from "react";
 
 import Layout from "../../components/Layout";
-import BlogRoll from "../../components/BlogRoll";
+import MusicRoll from "../../components/MusicRoll";
 
-export default class BlogIndexPage extends React.Component {
+export default class MusicIndexPage extends React.Component {
   render() {
     return (
       <Layout>
         <div
           className="full-width-image-container margin-top-0"
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
+            backgroundImage: `url('/img/music-index.jpg')`,
             backgroundPosition: `center left`,
             backgroundAttachment: `fixed`
           }}
@@ -24,13 +24,13 @@ export default class BlogIndexPage extends React.Component {
               padding: "1rem"
             }}
           >
-            Latest Stories
+            Compositions and Arrangements
           </h1>
         </div>
         <section className="section">
           <div className="container">
             <div className="content">
-              <BlogRoll />
+              <MusicRoll />
             </div>
           </div>
         </section>

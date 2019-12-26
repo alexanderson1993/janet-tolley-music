@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
-
 const Footer = class extends React.Component {
   render() {
     return (
@@ -95,6 +89,19 @@ const Footer = class extends React.Component {
                   />
                 </a> */}
               </div>
+            </div>
+            <div>
+              Icons made by{" "}
+              <a
+                href="https://www.flaticon.com/authors/freepik"
+                title="Freepik"
+              >
+                Freepik
+              </a>{" "}
+              from{" "}
+              <a href="https://www.flaticon.com/" title="Flaticon">
+                www.flaticon.com
+              </a>
             </div>
           </div>
         </div>
