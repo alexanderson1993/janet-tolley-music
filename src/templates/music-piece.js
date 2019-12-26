@@ -15,18 +15,6 @@ export const MusicPieceTemplate = ({
   instrumentation,
   score_pdf
 }) => {
-  console.log({
-    content,
-    contentComponent,
-    description,
-    tags,
-    title,
-    helmet,
-    date,
-    instrumentation,
-    score_pdf
-  });
-  console.log(score_pdf);
   return (
     <section className="section">
       {helmet || ""}
@@ -41,8 +29,10 @@ export const MusicPieceTemplate = ({
             </p>
             <p>{description}</p>
             <p>
-              <a href={score_pdf}>
-                <strong>Download this Composition</strong>
+              <a href={score_pdf.publicURL}>
+                <strong>
+                  Download this Composition ({score_pdf.prettySize})
+                </strong>
               </a>
             </p>
           </div>
@@ -97,7 +87,10 @@ export const pageQuery = graphql`
         title
         description
         instrumentation
-        score_pdf
+        score_pdf {
+          publicURL
+          prettySize
+        }
       }
     }
   }

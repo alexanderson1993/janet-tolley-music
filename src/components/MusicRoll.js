@@ -152,7 +152,6 @@ export default () => (
                 title
                 description
                 instrumentation
-                score_pdf
               }
             }
           }
