@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: 'Reflection #2'
 date: 2018-08-18T15:42:29.531Z
-description: We'll reflect on Restore.
+description: ''
 featuredpost: false
 featuredimage: /img/home-jumbotron.jpg
 tags:
