@@ -4,13 +4,13 @@ title: A bit about me.
 date: 2020-09-21T21:32:00.000Z
 description: ''
 ---
-<!--\[if gte mso 9]><xml>
+<!--\\[if gte mso 9]><xml>
  <o:OfficeDocumentSettings>
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
-</xml><!\[endif]-->
+</xml><!\\[endif]-->
 
-<!--\[if gte mso 9]><xml>
+<!--\\[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Normal</w:View>
   <w:Zoom>0</w:Zoom>
@@ -50,9 +50,9 @@ description: ''
    <m:intLim m:val="subSup"/>
    <m:naryLim m:val="undOvr"/>
   </m:mathPr></w:WordDocument>
-</xml><!\[endif]-->
+</xml><!\\[endif]-->
 
-<!--\[if gte mso 9]><xml>
+<!--\\[if gte mso 9]><xml>
  <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
   DefSemiHidden="false" DefQFormat="false" DefPriority="99"
   LatentStyleCount="376">
@@ -631,9 +631,9 @@ description: ''
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Smart Link"/>
  </w:LatentStyles>
-</xml><!\[endif]-->
+</xml><!\\[endif]-->
 
-<!--\[if gte mso 10]>
+<!--\\[if gte mso 10]>
 <style>
  /* Style Definitions */
  table.MsoNormalTable
@@ -659,17 +659,13 @@ description: ''
 	mso-bidi-font-family:"Times New Roman";
 	mso-bidi-theme-font:minor-bidi;}
 </style>
-<!\[endif]-->
+<!\\[endif]-->
 
 <!--StartFragment-->
-
-
 
 ***Music background***
 
 I grew up in a large, musical family.I began piano lessons at age 7, and violin lessons at age 8.I was a Suzuki violinist--my dad learned how to play the violin right along with my younger brother and me.My mother was our accompanist. By the time I was a Senior in high school, and enrolled in four music classes, I knew I wanted to major in music.
-
-
 
 ***Started teaching***\
 I graduated from Brigham Young University in 1985 with a Bachelor of Music degree in violin pedagogy. I began teaching violin lessons while I was in college and have continued teaching for most of the past 35 years.As a mother of 8, and a homemaker, teaching violin has been an ideal profession.
@@ -678,18 +674,12 @@ I graduated from Brigham Young University in 1985 with a Bachelor of Music degre
 
 I hope they will leave with the skill, understanding, confidence, and desire to continue playing, exploring new music, and participating with others in making music.
 
-
-
 ***What do you enjoy about teaching?***
 
 Working with children.Especially working with young children, whether teaching private violin lessons, volunteering in the local schools, or working with young musicians at church.I like building confidence and skill.Teaching requires creativity.It is both challenging and rewarding, and I continue learning, too.
 
-
-
 ***A meaningful memory***
 
 I have many memories from teaching a little girl who had Down’s syndrome.She was the middle child of three and I also taught both of her brothers.One time when I was working on getting her to feel the beat, I set her violin down, took both of her hands, and started dancing with her to the beat.She caught on.If she wanted to do something she could, but if she made up her mind that she didn’t want to--that was that.One day I was teaching her and her 5-year-old little brother.The little girl had just begun her lesson and then she said, “I’m done”.So, I said to her little brother, “Okay, it is time for your lesson.”Eventually I had both of them playing with me at the same time.The joy of teaching comes when I figure out what works at a specific time with a specific student. It is very individualized and very rewarding.
-
-
 
 <!--EndFragment-->
