@@ -1,15 +1,47 @@
 ---
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+import * as home from "../content/home.md";
+import { getCollection } from "astro:content";
+import Post from "../components/Post.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const posts = (await getCollection("blog"))
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.slice(0, 4);
 ---
 
 <Layout>
 	<Hero
-		hero="/img/home-jumbotron.jpg"
-		title="Uplifting and Inspiring Music"
-		subtitle="Come for the music, stay for the inspiration"
+		hero={home.frontmatter.image}
+		title={home.frontmatter.title}
+		subtitle={home.frontmatter.subtitle}
 	/>
+	<div class="posts">
+		{
+			posts.map((p) => (
+				<Post
+					id={p.id}
+					date={p.data.date}
+					title={p.data.title}
+					description={p.data.description}
+				/>
+			))
+		}
+	</div>
 </Layout>
+
+<style>
+	.posts {
+		margin-block: 2rem;
+		width: 100%;
+		max-width: 960px;
+		margin-inline: auto;
+		display: grid;
+		gap: 1rem;
+	}
+	@media (min-width: 640px) {
+		.posts {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>

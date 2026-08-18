@@ -61,9 +61,9 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: "src/content/home.md"
         label: "Landing Page"
-        name: "index"
+        name: "home"
         fields:
           - {
               label: "Template Key",
@@ -86,7 +86,7 @@ collections:
                   { label: Description, name: description, widget: text },
                 ],
             }
-      - file: "src/pages/about/index.md"
+      - file: "src/pages/about.md"
         label: "About"
         name: "about"
         fields:

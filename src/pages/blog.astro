@@ -1,5 +1,6 @@
 ---
 import Hero from "../components/Hero.astro";
+import Post from "../components/Post.astro";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -13,13 +14,12 @@ const posts = (await getCollection("blog")).sort(
 	<div class="posts">
 		{
 			posts.map((p) => (
-				<a class="post" href={`/blog/${p.id}`}>
-					<div>
-						<span class="post-title">{p.data.title}</span> •{" "}
-						<span class="post-date">{p.data.date.toLocaleDateString()}</span>
-					</div>
-					<p>{p.data.description}</p>
-				</a>
+				<Post
+					id={p.id}
+					date={p.data.date}
+					title={p.data.title}
+					description={p.data.description}
+				/>
 			))
 		}
 	</div>
@@ -33,23 +33,6 @@ const posts = (await getCollection("blog")).sort(
 		margin-inline: auto;
 		display: grid;
 		gap: 1rem;
-	}
-	.post {
-		border-radius: 1rem;
-		padding: 2rem;
-		background-color: oklch(from var(--primary) 0.98 0.05 h);
-		transition:
-			color 0.2s ease,
-			box-shadow 0.2s ease;
-		box-shadow: 5px 5px 10px oklch(from var(--primary) 0.98 0.05 h);
-	}
-	.post:hover {
-		background-color: oklch(from var(--primary) 0.97 0.05 h);
-		box-shadow: 2px 2px 5px oklch(from var(--primary) 0.97 0.05 h);
-	}
-	.post-title {
-		font-weight: 600;
-		font-size: 1.5rem;
 	}
 	@media (min-width: 640px) {
 		.posts {

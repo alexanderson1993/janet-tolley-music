@@ -1,36 +1,16 @@
 ---
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-
+import * as about from "../content/about.md";
+const compiled = await about.compiledContent();
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 	<div>
-		<h1>About Janet Tolley Music</h1>
-		<p>
-			Music has been a tremendous blessing in my life. I am a violinist by
-			training, an accompanist from experience, an organist through my church
-			service, and a composer and arranger, first from necessity, and more and
-			more out of interest. I still have a lot to learn and share.
-		</p>
-
-		<p>
-			I grew up in a large, musical family. I began piano lessons at age 7, and
-			violin lessons at age 8. I was a Suzuki violinist--my dad learned how to
-			play the violin right along with my younger brother and me. My mother was
-			our accompanist. By the time I was a Senior in high school, and enrolled
-			in four music classes, I knew I wanted to major in music.
-		</p>
-
-		<p>
-			I graduated from Brigham Young University in 1985 with a Bachelor of Music
-			degree in violin pedagogy. I began teaching violin lessons while I was in
-			college and have continued teaching for most of the past 35 years. As a
-			mother of 8, and a homemaker, teaching violin/piano has been an ideal
-			profession.
-		</p>
+		<h1>{about.frontmatter.title}</h1>
+		<Fragment set:html={compiled} />
 	</div>
 </Layout>
 
