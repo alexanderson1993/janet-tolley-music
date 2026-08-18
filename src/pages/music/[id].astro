@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+	const music = await getCollection("music");
+	return music.map((song) => ({
+		params: { id: song.id },
+		props: { song },
+	}));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { song } = Astro.props;
+---
+
+<Layout>
+	<div>
+		<h1>{song.data.title}</h1>
+		<p>{song.data.date.toLocaleDateString()} • {song.data.instrumentation}</p>
+		<p>{song.data.description}</p>
+		<a href={song.data.score_pdf}>Download this Composition</a>
+	</div>
+</Layout>
+
+<style>
+	div {
+		color: #333;
+		max-width: 65ch;
+		margin-inline: auto;
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+	a {
+		font-weight: 700;
+		color: var(--primary);
+		transition: color 0.2s ease;
+	}
+	a:hover {
+		color: oklch(from var(--primary) calc(l / 1.5) c h);
+	}
+</style>

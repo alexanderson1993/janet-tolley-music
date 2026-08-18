@@ -1,0 +1,113 @@
+<nav class="navbar" role="navigation" aria-label="main-navigation">
+  <div class="navbar-content">
+    <div class="navbar-brand">
+      <a href="/" class="navbar-item" title="Logo"> Janet Tolley Music </a>
+    </div>
+    <label
+      class="navbar-burger burger"
+      data-target="navMenu"
+      aria-label="Open Menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+      <input type="checkbox" />
+    </label>
+    <div id="navMenu" class="navbar-menu">
+      <a class="navbar-item" href="/about"> About </a>
+      <a class="navbar-item" href="/music"> Music </a>
+      <a class="navbar-item" href="/blog"> Blog </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    background: white;
+    width: 100%;
+  }
+  .navbar-content {
+    justify-content: space-between;
+    padding-inline: 0.75rem;
+    padding-block: 1rem;
+    max-width: 960px;
+    margin-inline: auto;
+  }
+  .navbar-content {
+    display: grid;
+    gap: 1rem;
+    align-items: baseline;
+    grid-template-columns: 1fr auto;
+    position: relative;
+  }
+  .navbar-menu {
+    display: none;
+    gap: 1rem;
+    flex-direction: column;
+    position: absolute;
+    background: white;
+    width: 100%;
+    top: 100%;
+    padding-inline: 0.75rem;
+    padding-block: 1rem;
+  }
+  .navbar-item {
+    transition: color 0.2s ease;
+  }
+  .navbar-item:hover {
+    color: var(--primary);
+  }
+
+  .icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+  }
+
+  .navbar-brand .navbar-item {
+    white-space: nowrap;
+    color: var(--black);
+    font-family: "Playfair", serif;
+    font-size: 24px;
+  }
+
+  .navbar-burger {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-self: center;
+    cursor: pointer;
+    position: relative;
+  }
+  .navbar-burger input {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .navbar-burger span {
+    display: block;
+    background: var(--black);
+    height: 1px;
+    width: 1.5rem;
+  }
+  .navbar-burger:has(:checked) + .navbar-menu {
+    display: flex;
+  }
+  @media (min-width: 640px) {
+    .navbar-content {
+      display: flex;
+      justify-content: start;
+    }
+    .navbar-burger {
+      display: none;
+    }
+    .navbar-menu {
+      display: flex;
+      flex-direction: row;
+      position: static;
+    }
+  }
+</style>

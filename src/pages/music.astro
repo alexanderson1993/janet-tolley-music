@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+
+const songs = (await getCollection("music")).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Layout>
+	<Hero hero="/img/music-index.jpg" title="Compositions and Arrangements" />
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Publication Date</th>
+				<th>Instrumentation</th>
+			</tr>
+		</thead>
+		<tbody
+			>{
+				songs.map((s) => (
+					<tr>
+						<td>
+							<a href={`/music/${s.id}`}>{s.data.title}</a>
+						</td>
+						<td>{s.data.date.toLocaleDateString()}</td>
+						<td>{s.data.instrumentation}</td>
+					</tr>
+				))
+			}</tbody
+		>
+	</table>
+</Layout>
+
+<style>
+	table {
+		margin-block: 2rem;
+		max-width: 960px;
+		margin-inline: auto;
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	th {
+		text-align: left;
+		padding: 0.5em 0.75em;
+		border: solid #dbdbdb;
+		border-width: 0 0 2px;
+	}
+	td {
+		border: solid #dbdbdb;
+		border-width: 0 0 1px;
+		padding: 0.5em 0.75em;
+		vertical-align: top;
+		text-align: left;
+	}
+	a {
+		color: var(--primary);
+		transition: color 0.2s ease;
+	}
+	a:hover {
+		color: oklch(from var(--primary) calc(l / 1.5) c h);
+	}
+</style>

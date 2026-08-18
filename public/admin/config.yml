@@ -1,0 +1,112 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Featured Post",
+          name: "featuredpost",
+          widget: "boolean",
+          required: false,
+        }
+      - {
+          label: "Featured Image",
+          name: "featuredimage",
+          widget: image,
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+  - name: "music"
+    label: "Music"
+    folder: "src/pages/music"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "music-piece",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Instrumentation", name: "instrumentation", widget: "string" }
+      - label: "Score PDF"
+        name: "score_pdf"
+        widget: "file"
+        media_library:
+          config:
+            multiple: true
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - { label: Description, name: description, widget: string }
+          - {
+              label: Main,
+              name: main,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
+      - file: "src/pages/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
